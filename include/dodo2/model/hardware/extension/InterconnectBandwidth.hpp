@@ -4,6 +4,7 @@
 
 #include <dodo2/model/hardware/HardwareAbstractionBase.hpp>
 #include <dodo2/model/hardware/property/Bandwidth.hpp>
+#include <dodo2/utility/AccessCountingMap.hpp>
 #include "ExtensionInterface.hpp"
 
 
@@ -74,7 +75,8 @@ namespace extension
             );
 
 
-            std::map< InterconnectGraph::EdgeID, float > durationMem;
+//            std::map< InterconnectGraph::EdgeID, float > durationMem;
+            dodo::utility::AccessCountingMap< InterconnectGraph::EdgeID, float > durationMem;
             for(auto eIt : id2inBW)
             {
                 InterconnectGraph::EdgeID e = eIt.first;
@@ -92,6 +94,7 @@ namespace extension
             // TODO: the result of the djikstra algorithm may be cached
 //            std::cout << distanceMap[ig.getSBGLID( from )] << std::endl;
 //            std::cout << distanceMap[ig.getSBGLID( to )] << std::endl;
+            std::cout << durationMem.accesses << "   ";
             return distanceMap[ig.getSBGLID( to )];
         }
 
