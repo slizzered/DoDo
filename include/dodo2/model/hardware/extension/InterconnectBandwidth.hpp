@@ -34,7 +34,7 @@ namespace extension
         utility::PropertyManager::MapType< decltype( id2inLat ) > inLatMap;
 
 
-    protected:
+    public:
         InterconnectBandwidth( ) :
             id2inBW{},
             inBWMap( id2inBW ),

@@ -35,7 +35,7 @@ namespace extension
         > id2speed;
         utility::PropertyManager::MapType< decltype( id2speed ) > speedMap;
 
-    protected:
+    public:
         virtual
         std::size_t
         countPropertiesInternal( ) override

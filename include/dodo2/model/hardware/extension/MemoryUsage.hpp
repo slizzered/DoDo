@@ -31,7 +31,7 @@ namespace extension
         > id2memusage;
         utility::PropertyManager::MapType< decltype( id2memusage ) > memUsageMap;
 
-    protected:
+    public:
         virtual
         std::size_t
         countPropertiesInternal( ) override

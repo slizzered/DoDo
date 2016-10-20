@@ -20,7 +20,7 @@ namespace extension
             std::list< std::shared_ptr< void > > &
         ) = 0;
 
-    protected:
+    public:
         virtual
         std::size_t
         countPropertiesInternal( ) = 0;
